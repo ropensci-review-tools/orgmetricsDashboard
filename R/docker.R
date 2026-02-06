@@ -40,6 +40,25 @@ orgmetrics_docker <- function (repo_url = NULL,
         quarto_provider = quarto_provider
     )
 
+    params <- c ("--rm", "--env-file", ".env")
+    if (quarto_local) {
+        path <- fs::path_abs (".")
+        path_dir <- fs::path_file (path)
+        params <- c (
+            params,
+            "-v",
+            paste0 (path, ":/mnt/", path_dir)
+        )
+    }
+
+    run_params <- c (
+        "run",
+        params,
+        "orgmetrics:latest"
+    )
+
+
+    system2 ("docker", run_params)
 }
 
 orgmetrics_container_url <- "ghcr.io/ropensci-review-tools/orgmetrics:latest"
