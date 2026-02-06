@@ -54,9 +54,8 @@ orgmetrics_docker <- function (repo_url = NULL,
     run_params <- c (
         "run",
         params,
-        "orgmetrics:latest"
+        docker_orgmetrics_image ()
     )
-
 
     system2 ("docker", run_params)
 }

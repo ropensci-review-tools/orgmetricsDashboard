@@ -35,7 +35,8 @@ docker_images_list <- function () {
 docker_orgmetrics_image <- function () {
 
     di <- docker_images_list ()
-    grep ("orgmetrics:latest", di$IMAGE, value = TRUE)
+    i <- grep ("orgmetrics:latest", di$IMAGE, value = FALSE)
+    di$ID [i]
 }
 
 #' Pull the 'orgmetrics' docker container for local use.
