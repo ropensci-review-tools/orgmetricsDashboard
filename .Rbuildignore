@@ -1,3 +1,4 @@
+.env
 .ropensci-staff
 ^.*\.Rproj$
 ^CODE_OF_CONDUCT\.md$
@@ -6,8 +7,8 @@
 ^README\.md$
 ^\.Rproj\.user$
 ^\.github$
+^\.pre-commit-config\.yaml$
 ^codemeta\.json$
 ^inst/WORDLIST$
 ^makefile$
 ^windows$
-.env
