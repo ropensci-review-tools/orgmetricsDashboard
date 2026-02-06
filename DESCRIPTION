@@ -13,8 +13,7 @@ BugReports: https://github.com/ropensci-review-tools/orgmetricsDashboard/issues
 Depends: R (>= 4.1)
 Imports:
     cli,
-    fs,
-    glue
+    fs
 Encoding: UTF-8
 Language: en-GB
 Roxygen: list(markdown = TRUE)
