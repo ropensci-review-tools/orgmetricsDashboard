@@ -1,6 +1,6 @@
 Package: orgmetricsDashboard
 Title: Dashboard of Metrics for Your GitHub Organization
-Version: 0.0.1.003
+Version: 0.0.1.004
 Authors@R: 
     person("Mark", "Padgham", , "mark.padgham@email.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2172-5265"))
@@ -12,8 +12,12 @@ URL: https://github.com/ropensci-review-tools/orgmetricsDashboard
 BugReports: https://github.com/ropensci-review-tools/orgmetricsDashboard/issues
 Depends: R (>= 4.1)
 Imports:
+    checkmate,
     cli,
-    fs
+    fs,
+    gert,
+    gitcreds,
+    whoami,
 Encoding: UTF-8
 Language: en-GB
 Roxygen: list(markdown = TRUE)
