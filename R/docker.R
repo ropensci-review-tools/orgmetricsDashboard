@@ -31,6 +31,16 @@ orgmetrics_docker <- function (repo_url = NULL,
                                quarto_publish = TRUE,
                                quarto_provider = "gh-pages") {
 
+    if (!is_docker_running ()) {
+        cli::cli_abort ("This requires docker to be running on your system.")
+    }
+    if (length (docker_orgmetrics_image ()) < 1L) {
+        cli::cli_abort (paste0 (
+            "You must first pull the 'orgmetrics' docker image by ",
+            "calling the 'docker_pull_orgmetrics_image()' function."
+        ))
+    }
+
     f <- create_dotenv_file (
         repo_url = repo_url,
         github_name = github_name,

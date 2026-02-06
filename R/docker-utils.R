@@ -1,5 +1,8 @@
 is_docker_installed <- function () {
-    dv <- system2 ("docker", "-v", stdout = TRUE)
+
+    dv <- suppressWarnings (
+        system2 ("docker", "-v", stdout = TRUE)
+    )
 
     any (grepl ("Docker version", dv))
 }
@@ -10,7 +13,9 @@ is_docker_running <- function () {
         return (FALSE)
     }
 
-    info <- system2 ("docker", "info", stdout = TRUE, stderr = FALSE)
+    info <- suppressWarnings (
+        system2 ("docker", "info", stdout = TRUE, stderr = FALSE)
+    )
     i <- grep ("^Server\\:", info)
     length (info) > i
 }
