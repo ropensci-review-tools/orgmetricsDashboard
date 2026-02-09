@@ -1,7 +1,8 @@
 #' Create a '.env' file to pass to docker
 #'
 #' Used in \link{orgmetrics_docker}, with all parameters passed directly from
-#' there.
+#' there. Also makes an "orgmetrics_config.yaml" file with title and
+#' aggregation period.
 #'
 #' @inheritParams orgmetrics_docker
 #' @noRd
@@ -9,6 +10,7 @@ create_dotenv_file <- function (path = ".",
                                 repo_url = NULL,
                                 github_name = NULL,
                                 git_email = NULL,
+                                dashboard_title = NULL,
                                 aggregation_period = 365,
                                 quarto_local = TRUE,
                                 quarto_publish = TRUE,
@@ -29,6 +31,11 @@ create_dotenv_file <- function (path = ".",
     }
     checkmate::assert_character (github_name, len = 1L)
     checkmate::assert_character (git_email, len = 1L)
+
+    if (is.null (dashboard_title)) {
+        r_univ_ptn <- "\\.r\\-universe\\.dev$"
+        dashboard_title <- gsub (r_univ_ptn, "", fs::path_file (repo_url))
+    }
 
     if (!quarto_publish && !quarto_local) {
         cli::cli_abort (paste0 (
@@ -60,8 +67,12 @@ create_dotenv_file <- function (path = ".",
         paste0 ("GIT_USER_NAME=", github_name),
         paste0 ("GIT_USER_EMAIL=", git_email),
         "",
-        "# R-universe-like repo containing 'packages.json' file to populate dashboard.",
+        paste0 (
+            "# R-universe-like repo containing 'packages.json' ",
+            "file to populate dashboard."
+        ),
         paste0 ("GIT_REMOTE_URL=", repo_url),
+        paste0 ("DASHBOARD_TITLE=", dashboard_title),
         paste0 ("AGGREGATION_PERIOD=", aggregation_period),
         paste0 ("QUARTO_PUBLISH=", quarto_publish),
         paste0 ("QUARTO_PROVIDER=", quarto_provider)
@@ -70,7 +81,10 @@ create_dotenv_file <- function (path = ".",
     f <- fs::path_abs (".env")
     writeLines (env, f)
     cli::cli_alert_info ("Docker environment information written to {f}")
-    cli::cli_inform ("This file may be deleted after dashboard has been successfully deployed.")
+    cli::cli_inform (paste0 (
+        "This file may be deleted after dashboard ",
+        "has been successfully deployed."
+    ))
 
     return (f)
 }

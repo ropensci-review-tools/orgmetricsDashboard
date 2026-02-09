@@ -10,6 +10,9 @@
 #' taken from \pkg{whoami}.
 #' @param git_email Your email used in Git commits. If not specified, value
 #' will be taken from \pkg{whoami}.
+#' @param dashboard_title If `NULL` (default), title is the name of the
+#' repository at `repo_url`. Alternative titles may be passed via this
+#' parameter.
 #' @param aggregation period Time period in days over which data are to be
 #' aggregated. Should generally be left at default value of annual aggregation.
 #' @param quarto_local If `TRUE` (default), the Docker command will create a
@@ -41,6 +44,7 @@
 orgmetrics_docker <- function (repo_url = NULL,
                                github_name = NULL,
                                git_email = NULL,
+                               dashboard_title = NULL,
                                aggregation_period = 365,
                                quarto_local = TRUE,
                                quarto_publish = TRUE,
@@ -57,6 +61,7 @@ orgmetrics_docker <- function (repo_url = NULL,
         repo_url = repo_url,
         github_name = github_name,
         git_email = git_email,
+        dashboard_title = dashboard_title,
         aggregation_period = aggregation_period,
         quarto_local = quarto_local,
         quarto_publish = quarto_publish,

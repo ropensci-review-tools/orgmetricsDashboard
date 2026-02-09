@@ -8,6 +8,7 @@ orgmetrics_docker(
   repo_url = NULL,
   github_name = NULL,
   git_email = NULL,
+  dashboard_title = NULL,
   aggregation_period = 365,
   quarto_local = TRUE,
   quarto_publish = TRUE,
@@ -24,6 +25,10 @@ taken from \pkg{whoami}.}
 
 \item{git_email}{Your email used in Git commits. If not specified, value
 will be taken from \pkg{whoami}.}
+
+\item{dashboard_title}{If \code{NULL} (default), title is the name of the
+repository at \code{repo_url}. Alternative titles may be passed via this
+parameter.}
 
 \item{quarto_local}{If \code{TRUE} (default), the Docker command will create a
 \verb{quarto/} sub-directory in the directory where this function is called.
