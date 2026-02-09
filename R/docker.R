@@ -13,7 +13,7 @@
 #' @param dashboard_title If `NULL` (default), title is the name of the
 #' repository at `repo_url`. Alternative titles may be passed via this
 #' parameter.
-#' @param aggregation period Time period in days over which data are to be
+#' @param aggregation_period Time period in days over which data are to be
 #' aggregated. Should generally be left at default value of annual aggregation.
 #' @param quarto_local If `TRUE` (default), the Docker command will create a
 #' `quarto/` sub-directory in the directory where this function is called.

@@ -30,6 +30,9 @@ will be taken from \pkg{whoami}.}
 repository at \code{repo_url}. Alternative titles may be passed via this
 parameter.}
 
+\item{aggregation_period}{Time period in days over which data are to be
+aggregated. Should generally be left at default value of annual aggregation.}
+
 \item{quarto_local}{If \code{TRUE} (default), the Docker command will create a
 \verb{quarto/} sub-directory in the directory where this function is called.
 This may be used in conjunction with \code{quarto_publish = FALSE} to create local
@@ -41,9 +44,6 @@ nominated Quarto service provider.}
 
 \item{quarto_provider}{Provider of service where dashboard is to be
 published.}
-
-\item{aggregation}{period Time period in days over which data are to be
-aggregated. Should generally be left at default value of annual aggregation.}
 }
 \value{
 Nothing.
