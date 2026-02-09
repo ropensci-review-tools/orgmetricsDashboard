@@ -24,3 +24,14 @@ The path to the new file, invisibly.
 Creates a Github workflow file in \code{dir} to automatically deploy your
 'orgmetrics' dashboard.
 }
+\examples{
+# Create a workflow file in the default location
+use_github_action_orgmetrics ()
+
+# Create with a custom name and location
+use_github_action_orgmetrics (
+    dir = ".github/workflows",
+    file_name = "orgmetrics-dashboard.yaml"
+)
+
+}

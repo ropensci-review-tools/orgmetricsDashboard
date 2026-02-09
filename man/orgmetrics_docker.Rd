@@ -43,3 +43,17 @@ Nothing.
 Downloads the 'orgmetrics' docker container and uses that to build a
 dashboard of your r-universe-like GitHub organization.
 }
+\examples{
+\dontrun{
+# First pull the Docker image
+docker_pull_orgmetrics_image ()
+
+# Run the container to build your dashboard locally
+orgmetrics_docker (
+    repo_url = "https://github.com/your-org/your-r-universe-repo",
+    github_name = "your-username",
+    git_email = "your-email@example.com"
+)
+}
+
+}

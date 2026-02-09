@@ -22,6 +22,18 @@
 #' published.
 #'
 #' @return Nothing.
+#' @examples
+#' \dontrun{
+#' # First pull the Docker image
+#' docker_pull_orgmetrics_image ()
+#'
+#' # Run the container to build your dashboard locally
+#' orgmetrics_docker (
+#'     repo_url = "https://github.com/your-org/your-r-universe-repo",
+#'     github_name = "your-username",
+#'     git_email = "your-email@example.com"
+#' )
+#' }
 #'
 #' @export
 orgmetrics_docker <- function (repo_url = NULL,

@@ -7,6 +7,15 @@
 #' @param overwrite Overwrite existing file?
 #' @param file_name Name of the workflow file.
 #' @return The path to the new file, invisibly.
+#' @examples
+#' # Create a workflow file in the default location
+#' use_github_action_orgmetrics ()
+#'
+#' # Create with a custom name and location
+#' use_github_action_orgmetrics (
+#'     dir = ".github/workflows",
+#'     file_name = "orgmetrics-dashboard.yaml"
+#' )
 #'
 #' @export
 use_github_action_orgmetrics <- function (dir = ".github/workflows",
