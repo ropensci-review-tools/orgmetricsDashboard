@@ -10,6 +10,8 @@
 #' taken from \pkg{whoami}.
 #' @param git_email Your email used in Git commits. If not specified, value
 #' will be taken from \pkg{whoami}.
+#' @param aggregation period Time period in days over which data are to be
+#' aggregated. Should generally be left at default value of annual aggregation.
 #' @param quarto_local If `TRUE` (default), the Docker command will create a
 #' `quarto/` sub-directory in the directory where this function is called.
 #' This may be used in conjunction with `quarto_publish = FALSE` to create local
@@ -39,6 +41,7 @@
 orgmetrics_docker <- function (repo_url = NULL,
                                github_name = NULL,
                                git_email = NULL,
+                               aggregation_period = 365,
                                quarto_local = TRUE,
                                quarto_publish = TRUE,
                                quarto_provider = "gh-pages") {
@@ -54,6 +57,7 @@ orgmetrics_docker <- function (repo_url = NULL,
         repo_url = repo_url,
         github_name = github_name,
         git_email = git_email,
+        aggregation_period = aggregation_period,
         quarto_local = quarto_local,
         quarto_publish = quarto_publish,
         quarto_provider = quarto_provider

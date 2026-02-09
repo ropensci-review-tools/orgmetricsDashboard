@@ -8,6 +8,7 @@ orgmetrics_docker(
   repo_url = NULL,
   github_name = NULL,
   git_email = NULL,
+  aggregation_period = 365,
   quarto_local = TRUE,
   quarto_publish = TRUE,
   quarto_provider = "gh-pages"
@@ -35,6 +36,9 @@ nominated Quarto service provider.}
 
 \item{quarto_provider}{Provider of service where dashboard is to be
 published.}
+
+\item{aggregation}{period Time period in days over which data are to be
+aggregated. Should generally be left at default value of annual aggregation.}
 }
 \value{
 Nothing.

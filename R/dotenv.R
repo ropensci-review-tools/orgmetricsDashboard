@@ -9,6 +9,7 @@ create_dotenv_file <- function (path = ".",
                                 repo_url = NULL,
                                 github_name = NULL,
                                 git_email = NULL,
+                                aggregation_period = 365,
                                 quarto_local = TRUE,
                                 quarto_publish = TRUE,
                                 quarto_provider = "gh-pages") {
@@ -61,6 +62,7 @@ create_dotenv_file <- function (path = ".",
         "",
         "# R-universe-like repo containing 'packages.json' file to populate dashboard.",
         paste0 ("GIT_REMOTE_URL=", repo_url),
+        paste0 ("AGGREGATION_PERIOD=", aggregation_period),
         paste0 ("QUARTO_PUBLISH=", quarto_publish),
         paste0 ("QUARTO_PROVIDER=", quarto_provider)
     )
