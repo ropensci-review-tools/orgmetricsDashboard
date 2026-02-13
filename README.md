@@ -49,9 +49,17 @@ install.packages ("orgmetricsDashboard")
 ```
 or directly from GitHub with one of these two lines:
 
+
 ``` r
 remotes::install_github ("ropensci-review-tools/orgmetricsDashboard")
 pak::pkg_install ("ropensci-review-tools/orgmetricsDashboard")
+```
+
+The package may also be installed from locations other than GitHub, with any of
+the following options:
+``` r
+remotes::install_git ("https://codeberg.org/ropensci-review-tools/orgmetricsDashboard")
+remotes::install_git ("https://codefloe.com/ropensci-review-tools/orgmetricsDashboard")
 ```
 
 ## Usage
