@@ -7,7 +7,7 @@
 # names as specified below:
 # - UNAME, EMAIL for git config
 # - CODEBERG for codeberg.org token
-# - CODEFLOW for codeflow.com token
+# - CODEFLOE for codefloe.com token
 
 name: push-to-elsewhere
 
