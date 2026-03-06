@@ -9,7 +9,7 @@ orgmetrics_docker(
   github_name = NULL,
   git_email = NULL,
   dashboard_title = NULL,
-  aggregation_period = 365,
+  aggregation_period = 365L,
   quarto_local = TRUE,
   quarto_publish = TRUE,
   quarto_provider = "gh-pages"
