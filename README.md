@@ -12,18 +12,21 @@ Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repost
 A dashboard for your GitHub organization, collated from applying accompanying
 [`orgmetrics`](https://docs.ropensci.org/orgmetrics/) and
 [`repometrics` packages](https://docs.ropensci.org/repometrics/)
-across all organization repositories. This is a lightweight package to enable
-organizational dashboards to be generated and published without installing all of the 
-necessary software (which is a large portion of the entire
-[`ropensci-review-tools` software
-suite](https://github.com/ropensci-review-tools).) The package can be installed almost instantaneously, and offers two easy ways to generate a dashboard:
+across all organization repositories. 
+A demonstration dashboard of the entire rOpenSci organization is currently at
+[ropensci-review-tools.github.io/orgmetrics-ropensci/](https://ropensci-review-tools.github.io/orgmetrics-ropensci/). It looks like this:
+
+![](./man/figures/ros-dashboard.png)
+
+This lightweight package enables organizational dashboards to be generated and
+published without installing all of the necessary software (which is a large
+portion of the entire [`ropensci-review-tools` software
+suite](https://github.com/ropensci-review-tools).) The package can be installed
+almost instantaneously, and offers two easy ways to generate a dashboard:
 
 1. Via a GitHub Actions workflow file; or
 2. Via a Docker container which can be run locally to generate and publish your
    dashboard, and which may then be deleted after use.
-
-A demonstration dashboard of the entire rOpenSci organization is currently at
-[ropensci-review-tools.github.io/orgmetrics-ropensci/](https://ropensci-review-tools.github.io/orgmetrics-ropensci/).
 
 ## How?
 
